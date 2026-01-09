@@ -1,27 +1,8 @@
 import express from "express";
 import {body, validationResult} from "express-validator"
+import users from "./data/users.js";
 
 
-let users= [
-    {
-        id : 1,
-        name : "wissal",
-        age :22,
-        adulte : true
-    },
-     {
-        id : 2,
-        name : "salsabil",
-        age :19,
-        adulte : true
-    },
-    {
-        id : 3,
-        name : "rayane",
-        age :17,
-        adulte : false
-    },
-]
 const app = express();
 const PORT = 4000;
 
