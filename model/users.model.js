@@ -1,16 +1,19 @@
+import mongoose from "mongoose";
 
-
-const usersSchema = new mongoose.schema({
-    name:{
+const usersSchema = new mongoose.Schema({
+    name: {
         type: String,
-        required: true,
-       
+        required: true
     },
-    age:{
+    age: {
         type: Number,
-        required: true,
+        required: true
     },
-    adulte:{
-        type : Boolean,
+    adulte: {
+        type: Boolean
     }
-})
+});
+
+
+const User = mongoose.model('User', usersSchema);
+export default User;
