@@ -1,10 +1,16 @@
 import express from "express";
 import {body, validationResult} from "express-validator"
 import users from "./data/users.js";
+import connectDB from "./config/db.js";
+import dotenv from "dotenv";
+
+dotenv.config();
+
 
 
 const app = express();
 const PORT = 4000;
+connectDB();
 
 app.use(express.json());
 
@@ -61,7 +67,7 @@ app.put('/api/users/:id',(req,res)=>{
 app.delete('/api/users/:id',(req, res)=>{
   let id = parseInt(req.params.id);
   users = users.filter((user)=> user.id !== id);
-  res.json(users);
+  res.status(200).json(users);
 })
 
 app.listen(PORT,'localhost',()=>{
